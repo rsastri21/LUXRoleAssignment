@@ -20,7 +20,7 @@ public class CSVReader {
     //      List<List<String>> output - Output reference to store information.
     public static String readCandidates(File csv, List<List<String>> output) {
         // Check file validity
-        if (!validFile(csv)) {
+        if (validFile(csv)) {
             return "Invalid file type";
         }
 
@@ -52,7 +52,7 @@ public class CSVReader {
     //      A constructed production object with prefilled roles.
     public static Production readProduction(File csv) {
         // Check file validity
-        if (!validFile(csv)) {
+        if (validFile(csv)) {
             throw new IllegalArgumentException();
         }
 
@@ -85,13 +85,13 @@ public class CSVReader {
     // Parameters:
     //      File csv - File to determine type.
     // Returns:
-    //      Boolean indicating validity.
+    //      Boolean indicating validity, true if invalid, false if valid.
     private static boolean validFile(File csv) {
         // Check that file is of the correct type
         String fileName = csv.getName();
         int lastPeriod = fileName.lastIndexOf('.');
         // Check equality with '.csv'
-        return fileName.substring(lastPeriod).equals(".csv");
+        return !fileName.substring(lastPeriod).equals(".csv");
     }
 
 
