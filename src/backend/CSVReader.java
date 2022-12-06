@@ -28,7 +28,7 @@ public class CSVReader {
             FileReader csvFile = new FileReader(csv);
             // Use a buffered reader to read CSV.
             BufferedReader reader = new BufferedReader(csvFile);
-            String line = "";
+            String line;
 
             // Iterate through lines
             while ((line = reader.readLine()) != null) {
@@ -59,7 +59,7 @@ public class CSVReader {
         try {
             FileReader csvFile = new FileReader(csv);
             BufferedReader reader = new BufferedReader(csvFile);
-            String line = "";
+            String line;
 
             // Create a list to maintain roles and pre-written assignments
             List<String> roles = new ArrayList<>();
@@ -94,7 +94,6 @@ public class CSVReader {
         return fileName.substring(lastPeriod).equals(".csv");
     }
 
-    // TODO: Method that outputs csv for a production.
 
     public static void main(String[] args) throws IOException {
         // Tests

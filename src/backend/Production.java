@@ -10,9 +10,9 @@ import java.util.List;
 public class Production {
 
     // Fields
-    private String name;
+    private final String name;
     // Crew list maps a role to a particular crew member.
-    private List<String[]> crew;
+    private final List<String[]> crew;
 
     public Production(List<String> roles, List<String> assignments, String name) {
         /*
@@ -55,8 +55,10 @@ public class Production {
 
     // Getters for name.
     public String getName() {
-        return "Production: " + this.name;
+        return this.name;
     }
+
+    // TODO: Method that outputs csv for a production.
 
 
 }
